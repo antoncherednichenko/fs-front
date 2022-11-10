@@ -1,0 +1,11 @@
+@import '../../../theme/vars.scss';
+
+.logo {
+    font-size: 24px;
+    font-weight: 600;
+    color: $app-black;
+    text-transform: uppercase;
+    .purple {
+        color: $primary-purple;
+    }
+}

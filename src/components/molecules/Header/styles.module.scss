@@ -1,0 +1,19 @@
+@import '../../../theme/vars.scss';
+
+.header {
+    background: $cream;
+    border-bottom: $app-border;
+    padding: 15px 10px;
+}
+
+.flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.buttons-container {
+    display: flex;
+    gap: 10px;
+    width: max-content;
+}

@@ -1,4 +1,8 @@
+import { ThemeProvider } from "@emotion/react"
 import { NonAuthTemplate, MainAuthTemplate } from "./templates"
+import { theme } from "./theme/theme"
+import './theme/reset.scss'
+
 
  
 function App() {
@@ -6,8 +10,10 @@ function App() {
   
   return (
     <>
-      {isAuth && <MainAuthTemplate />}
-      {!isAuth && <NonAuthTemplate />}
+      <ThemeProvider theme={theme}>
+        {isAuth && <MainAuthTemplate />}
+        {!isAuth && <NonAuthTemplate />}
+      </ThemeProvider>
     </>
   )
 }
