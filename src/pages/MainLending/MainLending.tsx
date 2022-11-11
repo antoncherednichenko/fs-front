@@ -1,7 +1,12 @@
+import { FirstSection } from "../../components/molecules"
+import classes from './styles.module.scss'
+
 const MainLending = () => {
 
     return (
-        <h1>main lending</h1>
+        <div className={classes.wrapper}>
+            <FirstSection />
+        </div>
     )
 }
 

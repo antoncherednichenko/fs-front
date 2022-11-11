@@ -1,0 +1,35 @@
+@import '../../../theme/vars.scss';
+
+.first-section {
+    width: 100;
+    padding-top: 45px;
+    background-color: $app-green;
+    border-bottom: $app-border;
+}
+
+.title {
+    margin-bottom: 25px;
+}
+
+.description {
+    margin-bottom: 25px;
+}
+
+.flex-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.column {
+    width: 100%;
+    max-width: 50%;
+}
+
+.scale {
+    transform: scale(-1, 1);
+    margin-bottom: 25px;
+    margin-right: 50px;
+    color: #fff;
+}

@@ -9,8 +9,8 @@ const Header = () => {
                 <div className={classes['flex-container']}>
                     <Logo />
                     <div className={classes['buttons-container']}>
-                        <Button route to="/auth" variant="text">Войти</Button>
-                        <Button route to="/auth">Зарегистрироваться</Button>
+                        <Button route to="/auth?type=login" variant="text">Войти</Button>
+                        <Button route to="/auth?type=registration">Зарегистрироваться</Button>
                     </div>
                 </div>
             </Container>

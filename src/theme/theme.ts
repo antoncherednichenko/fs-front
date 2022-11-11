@@ -6,6 +6,19 @@ export const theme = createTheme({
         main: '#222',
       },
     },
+    typography: {
+      fontFamily: 'Inter, sans-serif',
+      h1: {
+        fontSize: 110,
+        lineHeight: '110px',
+        color: '#222',
+      },
+      body2: {
+        fontSize: 16,
+        lineHeight: '25px',
+        color: '#222',
+      }
+    },
     components: {
       MuiButton: {
         styleOverrides: {
@@ -17,7 +30,7 @@ export const theme = createTheme({
             '&:hover': {
               background: '#B8A4FD',
               boxShadow: '5px 5px 0px 0px rgb(34 34 34)',
-              transform: ' translate(-2px, -2px)',
+              transform: 'translate(-2px, -2px)',
             },
           },
           text: {
@@ -25,7 +38,7 @@ export const theme = createTheme({
             '&:hover': {
               background: 'none',
               boxShadow: '5px 5px 0px 0px rgb(34 34 34)',
-              transform: ' translate(-2px, -2px)',
+              transform: 'translate(-2px, -2px)',
             },
           }
         },
