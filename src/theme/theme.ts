@@ -13,6 +13,11 @@ export const theme = createTheme({
         lineHeight: '110px',
         color: '#222',
       },
+      h3: {
+        fontSize: 53,
+        color: '#222',
+        lineHeight: '78px',
+      },
       body2: {
         fontSize: 16,
         lineHeight: '25px',
@@ -39,6 +44,16 @@ export const theme = createTheme({
               background: 'none',
               boxShadow: '5px 5px 0px 0px rgb(34 34 34)',
               transform: 'translate(-2px, -2px)',
+            },
+          },
+          contained: {
+            background: '#FFFDF8',
+            color: '#222',
+            '&:hover': {
+              background: '#FFFDF8',
+              color: '#B8A4FD',
+              boxShadow: 'none',
+              transform: 'none'
             },
           }
         },

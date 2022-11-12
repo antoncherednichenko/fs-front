@@ -1,0 +1,25 @@
+@import '../../../theme/vars.scss';
+
+.second-section {
+    background: $app-black;
+    color: #fff;
+    display: flex;
+    gap: 50px;
+}
+
+.column {
+    width: 100%;
+    max-width: 50%;
+    padding: 100px 25px;
+}
+
+.devider {
+    background: #fff;
+    width: 2px;
+    height: auto;
+}
+
+.column-title {
+    max-width: 410px;
+    margin-bottom: 25px;
+}
