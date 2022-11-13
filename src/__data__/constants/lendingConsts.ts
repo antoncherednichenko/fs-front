@@ -12,9 +12,8 @@ export const exampleCss = `
     }
 `
 
-export const exampleJavaScript = `
-    const title = document.getElementById('title')
-    if(title) {
-        title.innerText = '{ Практикуйся } в песочнице'
-    }
+export const exampleJavaScript = `const title = document.getElementById('title')
+if(title) {
+    title.innerText = '{ Практикуйся } в песочнице'
+}
 `

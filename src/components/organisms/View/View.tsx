@@ -35,6 +35,7 @@ const View: FC<IViewProps> = ({
                 ref={frame}
                 tabIndex={0}
                 frameBorder={0}
+                sandbox="allow-same-origin"
                 style={{
                     width: '100%', 
                     minHeight: minHeigth,

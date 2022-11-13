@@ -28,9 +28,6 @@ const CodeEditor: FC<ICodeEditorProps> = ({
     const changeHandler = (code: string) => {
         if(onChange) { onChange(code) }
     }
-    const onEditorLoad = (editor: any) => {
-        console.log(editor)
-    }
     return (
         <div>
             <AceEditor
@@ -48,7 +45,6 @@ const CodeEditor: FC<ICodeEditorProps> = ({
                 readOnly={readOnly}
                 value={code}
                 onChange={changeHandler}
-                onLoad={onEditorLoad}
             />
         </div>
     )

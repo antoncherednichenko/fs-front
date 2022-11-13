@@ -3,15 +3,25 @@
 .third-section {
     padding: 50px 0;
     border-bottom: $app-border;
+    background: $cream;
 }
 
-.girl-container {
-    max-width: 500px;
+.flex {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    .column {
+        width: 100%;
+        max-width: 50%;
+    }
+}
+
+.img-holder {
+    width: 350px;
     margin: 0 auto;
-    color: $app-black;
-    margin-bottom: 25px;
     svg {
         width: 100%;
         height: auto;
+        transform: scale(-1, 1);
     }
 }

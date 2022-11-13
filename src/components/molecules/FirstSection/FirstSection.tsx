@@ -19,7 +19,7 @@ const FirstSection = () => {
                         <div className={classes.description}>
                             <Typography variant="body2">
                                 ez-front считает, что программирование — это суперсила.<br /> 
-                                Прокачай свои навыки программирования,<br /> решай интресные задачи и кайфуй от своей крутости.
+                                Бесплатно прокачай свои навыки программирования,<br /> решай интресные задачи и кайфуй от своей крутости.
                             </Typography>
                         </div>
                         <Button route to="/auth?type=registration">
