@@ -1,0 +1,17 @@
+@import '../../../theme/vars.scss';
+
+.third-section {
+    padding: 50px 0;
+    border-bottom: $app-border;
+}
+
+.girl-container {
+    max-width: 500px;
+    margin: 0 auto;
+    color: $app-black;
+    margin-bottom: 25px;
+    svg {
+        width: 100%;
+        height: auto;
+    }
+}

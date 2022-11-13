@@ -1,4 +1,4 @@
-import { FirstSection, SecondSection } from "../../components/molecules"
+import { FirstSection, SecondSection, ThirdSection } from "../../components/molecules"
 import classes from './styles.module.scss'
 
 const MainLending = () => {
@@ -7,6 +7,7 @@ const MainLending = () => {
         <div className={classes.wrapper}>
             <FirstSection />
             <SecondSection />
+            <ThirdSection />
         </div>
     )
 }

@@ -49,6 +49,7 @@ export const theme = createTheme({
           contained: {
             background: '#FFFDF8',
             color: '#222',
+            borderRadius: 5,
             '&:hover': {
               background: '#FFFDF8',
               color: '#B8A4FD',
