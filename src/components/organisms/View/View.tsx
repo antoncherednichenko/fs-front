@@ -1,4 +1,5 @@
 import { FC, useEffect, useMemo, useRef, useState } from "react"
+import { getFrameStyles } from "../../../utils";
 import { IViewProps } from "./types"
 
 const View: FC<IViewProps> = ({
@@ -8,9 +9,7 @@ const View: FC<IViewProps> = ({
     minHeigth = 'auto'
 }) => {
     const frame = useRef<HTMLIFrameElement | null>(null);
-    const style = useMemo(() => (
-        `<style>${css}</style>`
-    ), [css])
+    const style = useMemo(() => getFrameStyles(css), [css])
     const [log, setLog] = useState()
     const [error, setError] = useState<string[]>([])
 
