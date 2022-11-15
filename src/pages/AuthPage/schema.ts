@@ -3,7 +3,7 @@ import * as yup from 'yup'
 export const validationSchema = yup.object({
     email: yup
         .string()
-        .email('Введите корректный email')
+        .email('Email должен быть похож на awesome_name@mail.ru')
         .required('Это обязательное поле'),
     password: yup
         .string()

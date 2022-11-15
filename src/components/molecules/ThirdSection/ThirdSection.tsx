@@ -22,7 +22,7 @@ const ThirdSection = () => {
                             тебе поможет наш интерактивный тренажер!
                             Пиши код прямо в браузере и кайфуй от результата.
                         </Typography>
-                        <Button route to="/auth?type=registration">Попробовать</Button>
+                        <Button route to="/auth?type=singup">Попробовать</Button>
                     </div>
                     <div className={classes.column}>
                         <div className={classes['img-holder']}>

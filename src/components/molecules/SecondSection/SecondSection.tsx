@@ -36,7 +36,7 @@ const SecondSection = () => {
                     В песочнице ты получишь пркатические навыки программирования,
                     научишься основным языковым конструкциям (функции, массивы, циклы, объекты и т.д.).
                 </Typography>
-                <Button route to="/auth?type=registration" variant="contained">
+                <Button route to="/auth?type=singup" variant="contained">
                     Начать практику
                 </Button>
             </div>

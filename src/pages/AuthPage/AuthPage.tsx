@@ -1,13 +1,15 @@
 import { TextField, Typography } from '@mui/material'
 import { FormikValues, useFormik } from 'formik'
 import { useMemo } from 'react'
-import { useLocation } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
+import { authApi } from '../../api/api'
 import { AppLink, Button } from '../../components/atoms'
 import { validationSchema } from './schema'
 import styles from './style.module.scss'
 
 const AuthPage = () => {
     const params = useLocation()
+    const navigate = useNavigate()
     const formType = useMemo(
         () => new URLSearchParams(params.search).get('type'), 
         [params]
@@ -17,7 +19,19 @@ const AuthPage = () => {
         [formType]
     )
     const formSubmit = (values: FormikValues) => {
-        console.log(values)
+        if(formType === 'login') {
+            authApi.login(values).then(resp => {
+                console.log(resp)
+            })
+        }
+        if(formType === 'singup') {
+            authApi.singup(values).then(resp => {
+                if(resp.data?.code === 0) {
+                    localStorage.setItem('accessToken', resp.data.data.accessToken)
+                    navigate('/')
+                }
+            })
+        }
     }
     const formik = useFormik({
         initialValues: {
@@ -68,7 +82,7 @@ const AuthPage = () => {
                     </Typography>
                     <AppLink
                         type='route'
-                        href="/auth?type=registration"
+                        href="/auth?type=singup"
                     >
                         Зарегистрироваться
                     </AppLink>

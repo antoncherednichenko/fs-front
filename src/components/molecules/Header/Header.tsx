@@ -10,7 +10,7 @@ const Header = () => {
                     <Logo />
                     <div className={classes['buttons-container']}>
                         <Button route to="/auth?type=login" variant="text">Войти</Button>
-                        <Button route to="/auth?type=registration">Зарегистрироваться</Button>
+                        <Button route to="/auth?type=singup">Зарегистрироваться</Button>
                     </div>
                 </div>
             </Container>

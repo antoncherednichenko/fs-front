@@ -24,7 +24,7 @@ const FirstSection = () => {
                                 Бесплатно прокачай свои навыки программирования,<br /> решай интресные задачи и кайфуй от своей крутости.
                             </Typography>
                         </div>
-                        <Button route to="/auth?type=registration">
+                        <Button route to="/auth?type=singup">
                             Стать круче
                         </Button>
                     </div>
