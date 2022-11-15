@@ -18,6 +18,10 @@ export const theme = createTheme({
         color: '#222',
         lineHeight: '78px',
       },
+      body1: {
+        fontSize: 14,
+        lineHeight: '23px'
+      },
       body2: {
         fontSize: 16,
         lineHeight: '25px',
@@ -28,6 +32,7 @@ export const theme = createTheme({
       MuiButton: {
         styleOverrides: {
           root: {
+            padding: 0,
             background: '#B8A4FD',
             border: '2px solid #222',
             borderRadius: 0,
@@ -58,6 +63,20 @@ export const theme = createTheme({
             },
           }
         },
+      },
+      MuiLink: {
+        styleOverrides: {
+          root: {
+            fontSize: 14,
+            textDecoration: 'none',
+            cursor: 'pointer',
+            fontFamily: 'Inter, sans-serif',
+            '&:hover': {
+              textDecoration: 'underline',
+              color: '#B8A4FD',
+            },
+          }
+        }
       },
     },
   })

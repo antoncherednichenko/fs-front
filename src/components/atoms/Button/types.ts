@@ -8,4 +8,5 @@ export interface IButtonProps {
     href?: string
     route?: boolean
     to?: string
+    type?: 'button' | 'submit'
 }

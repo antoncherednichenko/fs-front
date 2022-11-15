@@ -1,10 +1,12 @@
-import { Typography } from "@mui/material"
+import { Typography, useTheme } from "@mui/material"
 import { Container } from "@mui/system"
 import classes from './styles.module.scss'
 import { ReactComponent as Boy } from '../../../assets/illustrations/sitting-boy.svg'
 import { Button } from "../../atoms"
 
 const FirstSection = () => {
+    const theme = useTheme()
+
     return (
         <section className={classes['first-section']}>
             <Container>

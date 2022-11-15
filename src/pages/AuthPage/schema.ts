@@ -1,0 +1,12 @@
+import * as yup from 'yup'
+
+export const validationSchema = yup.object({
+    email: yup
+        .string()
+        .email('Введите корректный email')
+        .required('Это обязательное поле'),
+    password: yup
+        .string()
+        .min(8, 'Пароль должен состоять минимум из 8 символов')
+        .required('Это обязательное поле')
+})

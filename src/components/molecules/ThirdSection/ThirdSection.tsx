@@ -26,7 +26,7 @@ const ThirdSection = () => {
                     </div>
                     <div className={classes.column}>
                         <div className={classes['img-holder']}>
-                            <Man />
+                            
                         </div>
                     </div>
                 </div>

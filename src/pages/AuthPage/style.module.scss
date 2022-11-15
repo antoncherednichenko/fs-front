@@ -1,0 +1,19 @@
+@import '../../theme/vars.scss';
+
+.auth {
+    background: $cream;
+    border: $app-border;
+    width: 100%;
+    max-width: 600px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 15px;
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        margin-bottom: 15px;
+    }
+}

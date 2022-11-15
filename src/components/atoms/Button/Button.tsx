@@ -11,6 +11,7 @@ const Button: FC<IButtonProps> = ({
     fullWidth = false,
     route = false,
     to = '/',
+    type = 'button'
 }) => {
     const clickHandler = () => {
         if(route) return
@@ -22,15 +23,20 @@ const Button: FC<IButtonProps> = ({
             variant={variant as TButtonvariant}
             disabled={disabled}
             fullWidth={fullWidth}
+            type={type}
         >
             {!route && (
-                <Typography>
+                <Typography
+                    sx={{p: '6px 8px'}}
+                >
                     {children}
                 </Typography>
             )}
             {route && (
                 <Link to={to}>
-                    <Typography>
+                    <Typography
+                        sx={{p: '6px 8px'}}
+                    >
                         {children}
                     </Typography>
                 </Link>
