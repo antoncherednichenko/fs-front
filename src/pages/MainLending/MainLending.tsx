@@ -9,8 +9,8 @@ const MainLending = () => {
             sx={wrapper(theme)}
         >
             <FirstSection />
-            {/* <SecondSection />
-            <ThirdSection /> */}
+            <SecondSection />
+            {/* <ThirdSection /> */}
         </Box>
     )
 }
