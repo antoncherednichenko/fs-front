@@ -1,6 +1,5 @@
 import { Container, Typography } from '@mui/material'
-import { ReactComponent as Man } from '../../../assets/illustrations/man.svg'
-import { Button } from '../../atoms'
+import { Button } from 'components/atoms'
 import classes from './styles.module.scss'
 
 const ThirdSection = () => {

@@ -4,9 +4,9 @@ import {
     Route,
     Routes
 } from "react-router-dom";
-import { Header } from "../../components/molecules";
+import { Header } from "components/molecules";
 
-import { nonAuthRouterList } from "../../router/nonAuthRouter/nonAuthRouterList";
+import { nonAuthRouterList } from "router/nonAuthRouter/nonAuthRouterList";
 
 import classes from './styles.module.scss'
 

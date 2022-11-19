@@ -1,9 +1,9 @@
+import { useState } from 'react'
 import { Typography } from '@mui/material'
 import classes from './styles.module.scss'
-import { Button } from '../../atoms'
-import { CodeEditor, View } from '../../organisms'
-import { exampleHtml, exampleCss, exampleJavaScript } from '../../../__data__'
-import { useState } from 'react'
+import { Button } from 'components/atoms'
+import { CodeEditor, View } from 'components/organisms'
+import { exampleHtml, exampleCss, exampleJavaScript } from '__data__'
 
 const SecondSection = () => {
     const [javaScript, setJavaScript] = useState(exampleJavaScript)

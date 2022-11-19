@@ -1,5 +1,5 @@
 import { FC, useEffect, useMemo, useRef, useState } from "react"
-import { getFrameStyles } from "../../../utils";
+import { getFrameStyles } from "utils";
 import { IViewProps } from "./types"
 
 const View: FC<IViewProps> = ({

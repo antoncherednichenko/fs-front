@@ -19,16 +19,9 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
+    "baseUrl": "src",
   },
-  "paths": {
-    "baseUrl": ["./src"],
-    "atoms": ["./components/atoms"],
-    "molecules": ["./components/molecules"],
-    "organisms": ["./components/organisms"],
-    "pages": ["./pages"],
-    "templates": ["./templates"]
-  },
-  "include": [
-    "src"
-  ],
+  "include": ["src"], 
+  
+  
 }

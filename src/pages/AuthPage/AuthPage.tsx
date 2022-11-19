@@ -1,11 +1,11 @@
+import { useMemo } from 'react'
 import { TextField, Typography } from '@mui/material'
 import { FormikValues, useFormik } from 'formik'
-import { useMemo } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
-import { authApi } from '../../api/api'
-import { AppLink, Button } from '../../components/atoms'
-import { validationSchema } from './schema'
+import { authApi } from 'api/api'
+import { AppLink, Button } from 'components/atoms'
 import styles from './style.module.scss'
+import { validationSchema } from './schema'
 
 const AuthPage = () => {
     const params = useLocation()

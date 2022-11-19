@@ -1,6 +1,6 @@
 import axios from "axios"
 import { FormikValues } from "formik"
-import { ApiRoutes } from "../__data__/constants/routes"
+import { ApiRoutes } from "__data__/constants/routes"
 import { IAuthData } from "./types"
 
 export const BASE_HEADERS = {

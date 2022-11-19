@@ -1,5 +1,5 @@
 import { Container } from "@mui/system"
-import { Button, Logo } from "../../atoms"
+import { Button, Logo } from "components/atoms"
 import classes from './styles.module.scss'
 
 const Header = () => {
