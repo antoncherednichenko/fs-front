@@ -1,7 +1,7 @@
 import { Theme } from "@mui/material";
 
-export const bordered = (theme: Theme, backgroundColor: string) => ({
-    background: backgroundColor,
+export const bordered = (theme: Theme, backgroundColor?: string) => ({
+    background: backgroundColor || 'none',
     border: `2px solid ${theme.palette.appBlack}`,
     borderTop: 'none',  
     py: '50px',
