@@ -1,14 +1,17 @@
+import { Box, useTheme } from "@mui/material"
 import { FirstSection, SecondSection, ThirdSection } from "components/molecules"
-import classes from './styles.module.scss'
+import { wrapper } from "./styles"
 
 const MainLending = () => {
-
+    const theme = useTheme()
     return (
-        <div className={classes.wrapper}>
+        <Box
+            sx={wrapper(theme)}
+        >
             <FirstSection />
-            <SecondSection />
-            <ThirdSection />
-        </div>
+            {/* <SecondSection />
+            <ThirdSection /> */}
+        </Box>
     )
 }
 

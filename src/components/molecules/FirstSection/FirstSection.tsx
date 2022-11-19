@@ -1,40 +1,42 @@
-import { Typography, useTheme } from "@mui/material"
-import { Container } from "@mui/system"
-import { ReactComponent as Boy } from 'assets/illustrations/sitting-boy.svg'
-import { Button } from "components/atoms"
-import classes from './styles.module.scss'
+import { Box, Container, Typography, useTheme } from "@mui/material"
+import { Button, FlexContainer, Illustration } from "components/atoms"
+import { bordered } from "theme/shared"
+import { title } from "./styles"
+import { column } from "theme/shared"
 
 const FirstSection = () => {
-
+    const theme = useTheme()
     return (
-        <section className={classes['first-section']}>
-            <Container>
-                <div className={classes['flex-container']}>
-                    <div className={classes.column}>
-                        <div className={classes.title}>
-                            <Typography variant="h1">
-                                Изучай <br/>// крутой
-                                JavaScript
-                            </Typography>
-                        </div>
-                        <div className={classes.description}>
-                            <Typography variant="body2">
-                                ez-front считает, что программирование — это суперсила.<br /> 
-                                Бесплатно прокачай свои навыки программирования,<br /> решай интресные задачи и кайфуй от своей крутости.
-                            </Typography>
-                        </div>
+        <Box component="section">
+            <Container sx={bordered(theme, theme.palette.appGreen)}>
+                <FlexContainer>
+                    <Box sx={column(theme)}>
+                        <Typography sx={title()} variant="h1">
+                            Изучай <br/>// крутой
+                            JavaScript
+                        </Typography>
+                        <Typography variant="body2" sx={{ mb: '25px' }}>
+                            ez-front считает, что программирование — это суперсила.<br /> 
+                            Бесплатно прокачай свои навыки программирования,<br /> решай интресные задачи и кайфуй от своей крутости.
+                        </Typography>
                         <Button route to="/auth?type=singup">
                             Стать круче
                         </Button>
-                    </div>
-                    <div className={classes.column}>
-                        <div className={classes.scale}>
-                            <Boy />
-                        </div>
-                    </div>
-                </div>
+                    </Box>
+                    <Box sx={column(theme)}>
+                        <Illustration 
+                            name="Boy" 
+                            reflected
+                            centered
+                            size={{
+                                desctop: 350,
+                                tablet: 280
+                            }} 
+                        />
+                    </Box>
+                </FlexContainer>
             </Container>
-        </section>
+        </Box>
     )
 }
 

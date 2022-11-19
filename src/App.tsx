@@ -1,6 +1,6 @@
-import { ThemeProvider } from "@emotion/react"
+import { ThemeProvider, CssBaseline } from "@mui/material"
 import { NonAuthTemplate, MainAuthTemplate } from "./templates"
-import { theme } from "./theme/theme"
+import { theme as appTheme } from "theme/theme"
 import './theme/reset.scss'
 
 
@@ -10,7 +10,8 @@ function App() {
   
   return (
     <>
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={appTheme}>
+        <CssBaseline enableColorScheme />
         {isAuth && <MainAuthTemplate />}
         {!isAuth && <NonAuthTemplate />}
       </ThemeProvider>

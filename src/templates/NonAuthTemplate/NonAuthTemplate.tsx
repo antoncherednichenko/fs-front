@@ -16,17 +16,15 @@ const NonAuthTemplate = () => {
 			<Router>
 				<Header />
 				<div className={classes.wrapper}>
-					<Container>
-						<Routes>
-							{nonAuthRouterList.map(route => (
-								<Route
-									key={route.path}
-									path={route.path}
-									element={<route.component />} 
-								/>    
-							))}
-						</Routes>
-					</Container>
+					<Routes>
+						{nonAuthRouterList.map(route => (
+							<Route
+								key={route.path}
+								path={route.path}
+								element={<route.component />} 
+							/>    
+						))}
+					</Routes>
 				</div>
 			</Router>
 		</>
