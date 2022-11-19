@@ -1,14 +1,16 @@
-import { Container, Typography } from '@mui/material'
-import { Button } from 'components/atoms'
+import { Box, Container, Typography, useTheme } from '@mui/material'
+import { Button, FlexContainer } from 'components/atoms'
 import classes from './styles.module.scss'
+import { column, bordered } from 'theme/shared'
 
 const ThirdSection = () => {
+    const theme = useTheme()
     return (
-        <section className={classes['third-section']}>
-            <Container>
-                <div className={classes.flex}>
-                    <div className={classes.column}>
-                        <Typography variant="h3" sx={{marginBottom: '25px'}}>
+        <Box component="section">
+            <Container sx={bordered(theme, theme.palette.cream)}>
+                <FlexContainer>
+                    <Box sx={column(theme)}>
+                        <Typography variant="h3" sx={{mb: '25px'}}>
                             Не {'/* торопись */'}!
                         </Typography>
                         <Typography variant="body2" sx={{marginBottom: '10px'}}>
@@ -22,15 +24,13 @@ const ThirdSection = () => {
                             Пиши код прямо в браузере и кайфуй от результата.
                         </Typography>
                         <Button route to="/auth?type=singup">Попробовать</Button>
-                    </div>
-                    <div className={classes.column}>
-                        <div className={classes['img-holder']}>
-                            
-                        </div>
-                    </div>
-                </div>
+                    </Box>
+                    <Box sx={column(theme)}>
+                        
+                    </Box>
+                </FlexContainer>
             </Container>
-        </section>
+        </Box>
     )
 }
 

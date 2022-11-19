@@ -10,7 +10,7 @@ const MainLending = () => {
         >
             <FirstSection />
             <SecondSection />
-            {/* <ThirdSection /> */}
+            <ThirdSection />
         </Box>
     )
 }

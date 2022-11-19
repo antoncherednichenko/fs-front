@@ -170,4 +170,28 @@ if (theme.components) {
       }
     }
   }
+  theme.components.MuiIconButton = {
+    styleOverrides: {
+      root: {
+        color: theme.palette.appBlack,
+      }
+    }
+  }
+  theme.components.MuiMenu = {
+    styleOverrides: {
+      list: {
+        background: theme.palette.lightBlue,
+        border: `2px solid ${theme.palette.appBlack}`,
+        boxShadow: 'none',
+      }
+    }
+  }
+  theme.components.MuiPaper = {
+    styleOverrides: {
+      root: {
+        boxShadow: 'none',
+        borderRadius: 0,
+      }
+    }
+  }
 }

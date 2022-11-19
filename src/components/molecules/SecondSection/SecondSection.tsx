@@ -15,7 +15,7 @@ const SecondSection = () => {
     return (
         <section>
             <Container sx={bordered(theme, theme.palette.appBlack)}>
-                <FlexContainer>
+                <FlexContainer wrapReverse>
                     <Box sx={column(theme)}>
                         <Typography variant='body2' sx={{ color: '#fff' }}>
                             <CodeEditor
