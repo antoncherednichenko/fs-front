@@ -194,4 +194,11 @@ if (theme.components) {
       }
     }
   }
+  theme.components.MuiMenuItem = {
+    styleOverrides: {
+      root: {
+        borderBottom: `1px solid ${theme.palette.appBlack}`
+      }
+    }
+  }
 }

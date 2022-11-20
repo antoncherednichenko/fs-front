@@ -2,35 +2,29 @@ import { useMemo } from 'react'
 import { TextField, Typography } from '@mui/material'
 import { FormikValues, useFormik } from 'formik'
 import { useLocation, useNavigate } from 'react-router-dom'
-import { authApi } from 'api/api'
 import { AppLink, Button } from 'components/atoms'
 import styles from './style.module.scss'
 import { validationSchema } from './schema'
+import { useAppDispatch } from 'hooks'
+import { authAction } from 'store/actions'
 
 const AuthPage = () => {
     const params = useLocation()
     const navigate = useNavigate()
+    const dispatch = useAppDispatch()
     const formType = useMemo(
         () => new URLSearchParams(params.search).get('type'), 
         [params]
     )
     const title = useMemo(
-        () => formType === 'login' ? 'Войти' : 'Зарегистрироваться', 
+        () => formType === 'login' ? 'Войти' : 'Регистрация', 
         [formType]
     )
-    const formSubmit = (values: FormikValues) => {
-        if(formType === 'login') {
-            authApi.login(values).then(resp => {
-                console.log(resp)
-            })
-        }
-        if(formType === 'singup') {
-            authApi.singup(values).then(resp => {
-                if(resp.data?.code === 0) {
-                    localStorage.setItem('accessToken', resp.data.data.accessToken)
-                    navigate('/')
-                }
-            })
+    const formSubmit = async (values: FormikValues) => {
+        const userData = await dispatch(authAction(values, formType as 'login' | 'singup'))
+        if (userData) {
+            localStorage.setItem('accessToken', userData.accessToken)
+            location.reload()
         }
     }
     const formik = useFormik({
