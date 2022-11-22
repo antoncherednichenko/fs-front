@@ -24,7 +24,9 @@ const AuthPage = () => {
         const userData = await dispatch(authAction(values, formType as 'login' | 'singup'))
         if (userData) {
             localStorage.setItem('accessToken', userData.accessToken)
+            navigate('/courses')
             location.reload()
+            
         }
     }
     const formik = useFormik({
