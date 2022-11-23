@@ -17,3 +17,19 @@ export const authAction = (values: FormikValues, type: string) =>
       return userData
     }
   }
+
+export const getUser = () => 
+  async (dispatch: Dispatch) => {
+    const userData = await authApi.getUser()
+      .then(resp => {
+        if (resp.data?.code === 0) {
+          dispatch(updateUserState(resp.data.data))
+          return resp.data.data
+        }
+      })
+    if (userData) {
+      return userData
+    }
+    return null
+  }
+    

@@ -5,4 +5,6 @@ export interface IUserState {
     accessToken: string | null
     isBanned: boolean
     banReason: string | null
+    createdAt?: string
+    updatedAt?: string
 }
