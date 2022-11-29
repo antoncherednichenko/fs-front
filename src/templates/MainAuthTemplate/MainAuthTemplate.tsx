@@ -6,14 +6,18 @@ import {
   useNavigate
 } from "react-router-dom";
 import { authRouterList } from "router/authRouter/authRouterList";
-import { useAppDispatch } from "hooks";
+import { useAppDispatch, useGetPage } from "hooks";
 import { useEffect } from "react";
 import { getUser } from "store/actions";
+import { Pages } from "__data__";
+import { Sidebar } from "components/molecules";
+import { ISidebarPage } from "./types";
 
 const MainAuthTemplate = () => {
   const theme = useTheme()
   const navigate = useNavigate()
   const dispatch = useAppDispatch()
+  const { isLoading, data, error } = useGetPage<ISidebarPage>(Pages.Sidebar)
 
   useEffect(() => {
     const getUserInfo = async () => {
@@ -26,6 +30,7 @@ const MainAuthTemplate = () => {
     }
     getUserInfo()
   }, [])
+  console.log(data)
 
   return (
     <Grid 
@@ -34,7 +39,7 @@ const MainAuthTemplate = () => {
       sx={mainContainer(theme)}
     >
       <Grid item sx={sidebarContainer(theme)}>
-      sidebar
+        <Sidebar items={data?.features?.at(0)?.items || []} />
       </Grid>
       <Grid item sx={contentContainer(theme)}>
         <Container>

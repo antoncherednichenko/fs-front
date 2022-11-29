@@ -14,6 +14,8 @@ const getHeaders = () => {
             ...BASE_HEADERS,
             Authorization: `Bearer ${token}`
         }
+    } else {
+        return BASE_HEADERS
     }
 }
 
@@ -28,4 +30,9 @@ export const authApi = {
     singup: (data: FormikValues) => 
         instance.post(ApiRoutes.auth.singup, data),
     getUser: () => instance.get(ApiRoutes.auth.getUser)
+}
+
+export const pageApi = {
+    getPage: (page: string) =>
+        instance.get(ApiRoutes.pages.getPage(page))
 }
