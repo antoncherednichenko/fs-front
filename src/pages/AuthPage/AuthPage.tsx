@@ -7,6 +7,7 @@ import styles from "./style.module.scss";
 import { validationSchema } from "./schema";
 import { useAppDispatch } from "hooks";
 import { authAction } from "store/actions";
+import { PagesRoutes } from "__data__";
 
 const AuthPage = () => {
   const params = useLocation();
@@ -26,7 +27,7 @@ const AuthPage = () => {
     );
     if (userData) {
       localStorage.setItem("accessToken", userData.accessToken);
-      navigate("/courses");
+      navigate(PagesRoutes.Courses);
       location.reload();
     }
   };

@@ -1,36 +1,33 @@
-import { Box, Container, Grid, useTheme } from "@mui/material"
+import { Container, Grid, useTheme } from "@mui/material"
 import { contentContainer, mainContainer, sidebarContainer } from "./styles"
 import {
   Route,
   Routes,
+  useLocation,
   useNavigate
 } from "react-router-dom";
 import { authRouterList } from "router/authRouter/authRouterList";
-import { useAppDispatch, useGetPage } from "hooks";
+import { useAppDispatch, useAppSelector, useGetPage } from "hooks";
 import { useEffect } from "react";
 import { getUser } from "store/actions";
-import { Pages } from "__data__";
-import { Sidebar } from "components/molecules";
+import { Pages, PagesRoutes } from "__data__";
+import { Sidebar, UserInfo } from "components/molecules";
 import { ISidebarPage } from "./types";
 
 const MainAuthTemplate = () => {
   const theme = useTheme()
-  const navigate = useNavigate()
   const dispatch = useAppDispatch()
-  const { isLoading, data, error } = useGetPage<ISidebarPage>(Pages.Sidebar)
+  const { data } = useGetPage<ISidebarPage>(Pages.Sidebar)
+  const { email, role } = useAppSelector(state => state.user)
+  const location = useLocation()
+  const navigate = useNavigate()
 
   useEffect(() => {
-    const getUserInfo = async () => {
-      const user = await dispatch(getUser())
-      if (!user) {
-        localStorage.setItem('accesToken', '')
-        navigate('/')
-        location.reload()
-      }
+    dispatch(getUser())
+    if(location.pathname === PagesRoutes.Main) {
+      navigate(PagesRoutes.Courses)
     }
-    getUserInfo()
   }, [])
-  console.log(data)
 
   return (
     <Grid 
@@ -39,6 +36,10 @@ const MainAuthTemplate = () => {
       sx={mainContainer(theme)}
     >
       <Grid item sx={sidebarContainer(theme)}>
+        <UserInfo
+          email={email || ""}
+          role={role || ""} 
+        />
         <Sidebar items={data?.features?.at(0)?.items || []} />
       </Grid>
       <Grid item sx={contentContainer(theme)}>

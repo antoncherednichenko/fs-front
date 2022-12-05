@@ -27,6 +27,10 @@ export const getUser = () =>
           return resp.data.data
         }
       })
+      .catch(err => {
+        localStorage.setItem('accessToken', '')
+        location.replace('/')
+      })
     if (userData) {
       return userData
     }

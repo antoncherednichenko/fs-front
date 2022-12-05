@@ -11,5 +11,17 @@ export const ApiRoutes = {
 }
 
 export enum Pages {
+    Courses = 'courses',
+    Progress = 'progress',
+    Sandbox = 'sanbox',
+    Textbook = 'textbook',
     Sidebar = 'sidebar'
+}
+
+export enum PagesRoutes {
+    Courses = '/courses',
+    Progress = '/progress',
+    Sandbox = '/sanbox',
+    Textbook = '/textbook',
+    Main = '/',
 }

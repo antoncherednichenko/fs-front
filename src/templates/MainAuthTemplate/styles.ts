@@ -7,7 +7,6 @@ export const mainContainer = (theme: Theme) => ({
 export const sidebarContainer = (theme: Theme) => ({
     width: '100%',
     maxWidth: 250,
-    padding: '25px 15px',
     height: '100vh',
     borderRight: `2px solid ${theme.palette.appBlack}`,
 })
