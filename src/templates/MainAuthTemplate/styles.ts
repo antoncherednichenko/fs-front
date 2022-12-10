@@ -13,7 +13,8 @@ export const sidebarContainer = (theme: Theme) => ({
 
 export const contentContainer = (theme: Theme) => ({
     flexGrow: 2,
-    padding: '25px 0',
+    paddingTop: '100px',
+    borderTop: `2px solid ${theme.palette.appBlack}`,
     maxHeight: '100vh',
     overflowY: 'auto',   
 })

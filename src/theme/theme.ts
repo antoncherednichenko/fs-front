@@ -201,4 +201,12 @@ if (theme.components) {
       }
     }
   }
+  theme.components.MuiCard = {
+    styleOverrides: {
+      root: {
+        background: theme.palette.cream,
+        border: `2px solid ${theme.palette.appBlack}`
+      }
+    }
+  }
 }

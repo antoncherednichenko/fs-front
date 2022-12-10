@@ -26,7 +26,7 @@ const Sidebar: FC<ISidebarProps> = ({ items }) => {
         {items.map((item) => (
           <Link key={item.url} to={item.url}>
             <Typography component="span" 
-              sx={sidebarItem(theme, location.pathname === item.url)}
+              sx={sidebarItem(theme, location.pathname.includes(item.url))}
             >
               {renderIcon(item.icon, 20)}
               {item.title}

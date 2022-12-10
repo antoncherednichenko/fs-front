@@ -17,7 +17,7 @@ import { ISidebarPage } from "./types";
 const MainAuthTemplate = () => {
   const theme = useTheme()
   const dispatch = useAppDispatch()
-  const { data } = useGetPage<ISidebarPage>(Pages.Sidebar)
+  const { data } = useGetPage(Pages.Sidebar)
   const { email, role } = useAppSelector(state => state.user)
   const location = useLocation()
   const navigate = useNavigate()
@@ -40,7 +40,7 @@ const MainAuthTemplate = () => {
           email={email || ""}
           role={role || ""} 
         />
-        <Sidebar items={data?.features?.at(0)?.items || []} />
+        <Sidebar items={data?.at(0)?.items || []} />
       </Grid>
       <Grid item sx={contentContainer(theme)}>
         <Container>
