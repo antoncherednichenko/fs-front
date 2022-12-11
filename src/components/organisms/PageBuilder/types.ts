@@ -3,7 +3,9 @@ import { TDirections } from "components/molecules/CardsList/types"
 import { ISidebarItem } from "components/molecules/Sidebar/types"
 
 export enum FeaturesTypes {
-    Cards = 'cards'
+    Cards = 'cards',
+    Lessons = 'lessons',
+    GoBack = 'goBack',
 }
 
 export interface IFeatureItem 

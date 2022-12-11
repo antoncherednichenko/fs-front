@@ -2,7 +2,8 @@ import {
     IoIosSchool, 
     IoIosRibbon, 
     IoMdCube, 
-    IoIosJournal 
+    IoIosJournal ,
+    IoMdArrowBack,
 } from 'react-icons/io'
 import { IconsNames } from "__data__";
 
@@ -17,6 +18,8 @@ export const renderIcon = (name: string, size?: number) => {
             return <IoMdCube size={currentSize} />
         case IconsNames.Book:
             return <IoIosJournal size={currentSize} />
+        case IconsNames.ArrowLeft:
+            return <IoMdArrowBack size={currentSize} />
         default:
             return <></>
     }   

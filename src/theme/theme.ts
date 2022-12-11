@@ -127,11 +127,13 @@ if (theme.components) {
         },
       },
       contained: {
-        background: theme.palette.cream,
+        background: 'none',
         color: theme.palette.appBlack,
-        borderRadius: 5,
+        border: 'none',
+        boxShadow: 'none',
+        p: 0,
         '&:hover': {
-          background: theme.palette.cream,
+          background: 'none',
           color: theme.palette.primaryPurple,
           boxShadow: 'none',
           transform: 'none'

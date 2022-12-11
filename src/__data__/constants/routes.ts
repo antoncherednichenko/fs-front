@@ -19,9 +19,10 @@ export enum Pages {
 }
 
 export enum PagesRoutes {
+    Main = '/',
     Courses = '/courses',
+    Lessons = '/courses/:lesson',
     Progress = '/progress',
     Sandbox = '/sanbox',
     Textbook = '/textbook',
-    Main = '/',
 }
