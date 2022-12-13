@@ -1,6 +1,7 @@
 import { ICardProps } from "components/molecules/Card/types"
 import { TDirections } from "components/molecules/CardsList/types"
 import { ISidebarItem } from "components/molecules/Sidebar/types"
+import { IStep } from "components/molecules/Steps/types"
 
 export enum FeaturesTypes {
     Cards = 'cards',
@@ -10,7 +11,8 @@ export enum FeaturesTypes {
 
 export interface IFeatureItem 
     extends ICardProps, 
-    ISidebarItem 
+    ISidebarItem,
+    IStep 
     {}
 
 export interface IFeatureSettings {
@@ -36,6 +38,7 @@ export interface IFeature {
     items?: IFeatureItem[]
     settings?: IFeatureSettings
     direction?: TDirections
+    activeStep?: number
 }
 
 export interface IPageBuilderProps {
