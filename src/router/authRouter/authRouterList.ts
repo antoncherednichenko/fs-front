@@ -1,9 +1,16 @@
+import { CoursesSkeleton, LessonsSkeleton } from "components/molecules";
 import { IRouter } from "router/types";
 
 import { PagesRoutes } from "__data__";
-import { Courses, Lessons } from "pages"
 
 export const authRouterList: IRouter[] = [
-    { path: PagesRoutes.Courses, component: Courses },
-    { path: PagesRoutes.Lessons, component: Lessons },
+    { 
+        path: PagesRoutes.Courses, 
+        component: CoursesSkeleton 
+    },
+    { 
+        path: PagesRoutes.Lessons, 
+        component: LessonsSkeleton, 
+        routeId: 'lesson' 
+    },
 ]

@@ -10,3 +10,8 @@ export const stepDescription = (theme: Theme) => ({
     width: '100%',
     maxWidth: '550px',
 })
+
+export const buttonContainer = () => ({
+    display: 'flex',
+    gap: '15px'
+})

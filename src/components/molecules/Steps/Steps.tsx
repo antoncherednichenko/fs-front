@@ -10,7 +10,7 @@ import {
 import { Box } from "@mui/system"
 import { Button } from "components/atoms"
 import { IStepsProps } from "./types"
-import { stepDescription, stepTitle } from './styles'
+import { buttonContainer, stepDescription, stepTitle } from './styles'
 
 const Steps:FC<IStepsProps> = ({ steps, activeStep }) => {
 	const theme = useTheme()
@@ -28,7 +28,7 @@ const Steps:FC<IStepsProps> = ({ steps, activeStep }) => {
 						<Typography sx={stepDescription(theme)} variant="body2">
 							{step.description}
 						</Typography>
-						<Box>
+						<Box sx={buttonContainer()}>
 							{step.stepsButtons.map(({ text, ...buttonProps }, i) => (
 								<Button key={i} {...buttonProps}>
 									<Typography>{text}</Typography>

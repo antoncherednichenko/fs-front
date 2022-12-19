@@ -12,7 +12,7 @@ import { useEffect } from "react";
 import { getUser } from "store/actions";
 import { Pages, PagesRoutes } from "__data__";
 import { Sidebar, UserInfo } from "components/molecules";
-import { ISidebarPage } from "./types";
+import { Page } from "pages";
 
 const MainAuthTemplate = () => {
   const theme = useTheme()
@@ -48,8 +48,16 @@ const MainAuthTemplate = () => {
             {authRouterList.map(route => (
               <Route 
                 path={route.path}
-                element={<route.component />}
-                key={route.path} 
+                key={route.path}
+                element={(
+                  <Page 
+                    key={route.path} 
+                    route={route.path as PagesRoutes}
+                    routeId={route.routeId} 
+                  >
+                    <route.component />
+                  </Page>
+                )} 
               />
             ))}
           </Routes>

@@ -1,4 +1,5 @@
 export interface IRouter {
     path: string
-    component: React.FC
+    component: React.FC,
+    routeId?: string
 }
