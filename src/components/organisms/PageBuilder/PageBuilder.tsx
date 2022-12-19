@@ -23,6 +23,7 @@ const PageBuilder: FC<IPageBuilderProps> = ({ features, error }) => {
       case FeaturesTypes.Lessons:
         return (
           <Steps 
+            key={feature.name}
             activeStep={feature.activeStep || 0} 
             steps={feature.items || []} 
           />

@@ -13,4 +13,9 @@ export const authRouterList: IRouter[] = [
         component: LessonsSkeleton, 
         routeId: 'lesson' 
     },
+    { 
+        path: PagesRoutes.CurrentLesson, 
+        component: LessonsSkeleton,
+        routeId: 'id'
+    },
 ]
