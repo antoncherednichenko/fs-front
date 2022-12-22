@@ -1,6 +1,6 @@
-import { FC } from 'react';
+import { FC, useState } from 'react';
 import AceEditor from 'react-ace'
-import { ICodeEditorProps } from './types';
+import { ECodeEditorThems, ICodeEditorProps } from './types';
 
 import "ace-builds/src-noconflict/mode-javascript";
 import "ace-builds/src-noconflict/mode-html";
@@ -16,6 +16,7 @@ import "ace-builds/src-noconflict/theme-textmate";
 import "ace-builds/src-noconflict/theme-solarized_dark";
 import "ace-builds/src-noconflict/theme-solarized_light";
 import "ace-builds/src-noconflict/theme-terminal";
+import { CodeEditorTools } from 'components/molecules';
 
 
 const CodeEditor: FC<ICodeEditorProps> = ({
@@ -25,15 +26,25 @@ const CodeEditor: FC<ICodeEditorProps> = ({
     onChange,
     height = '500px',
 }) => {
+    const [theme, setTheme] = useState<ECodeEditorThems>(ECodeEditorThems.Twilight)
     const changeHandler = (code: string) => {
         if(onChange) { onChange(code) }
     }
+    const themeChangeHandler = (newTheme: ECodeEditorThems) => {
+        setTheme(newTheme)
+    }
     return (
         <div>
+            {tools && (
+                <CodeEditorTools
+                    themeValue={theme}
+                    onThemeChange={themeChangeHandler} 
+                />
+            )}
             <AceEditor
                 name="code_editor"
                 mode="javascript"
-                theme="twilight" 
+                theme={theme} 
                 width="100%"
                 setOptions={{enableBasicAutocompletion: true}}
                 height={height}

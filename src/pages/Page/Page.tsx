@@ -5,9 +5,12 @@ import { Box } from "@mui/material"
 import { PageBuilder } from "components/organisms"
 import { useParams } from "react-router-dom"
 
-const Page: FC<PropsWithChildren<IPageProps>> = ({ route, children, routeId }) => {
+const Page: FC<PropsWithChildren<IPageProps>> = ({ route, children, routeId, page }) => {
     const params = useParams()
     const currentRoute = useMemo(() => {
+        if (page) {
+            return page
+        }
         return routeId ? params[routeId] : route.replace('/', '')
     }, [routeId, params])
     const { isLoading, data, error } = useGetPage(currentRoute ?? '/')

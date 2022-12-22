@@ -53,7 +53,8 @@ const MainAuthTemplate = () => {
                   <Page 
                     key={route.path} 
                     route={route.path as PagesRoutes}
-                    routeId={route.routeId} 
+                    routeId={route.routeId}
+                    page={route.page} 
                   >
                     <route.component />
                   </Page>

@@ -15,7 +15,6 @@ const View: FC<IViewProps> = ({
 
     useEffect(() => {
         if(frame.current) {
-            console.dir(frame.current)
             const frameDocument = frame.current.contentWindow?.document 
                 || frame.current?.contentDocument
             frameDocument?.open()

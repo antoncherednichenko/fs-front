@@ -2,6 +2,7 @@ import { Box } from "@mui/material"
 import { GoBackBtn } from "components/atoms"
 import { CardsList, PageError, Steps } from "components/molecules"
 import React, { FC } from "react"
+import { Trainer } from "../Trainer"
 import { FeaturesTypes, IFeature, IPageBuilderProps } from "./types"
 
 const PageBuilder: FC<IPageBuilderProps> = ({ features, error }) => {
@@ -28,6 +29,8 @@ const PageBuilder: FC<IPageBuilderProps> = ({ features, error }) => {
             steps={feature.items || []} 
           />
         )
+      case FeaturesTypes.Trainer:
+        return <Trainer key={feature.name} />
       default:
         return <PageError />
     }

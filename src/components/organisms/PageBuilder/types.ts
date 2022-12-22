@@ -7,6 +7,7 @@ export enum FeaturesTypes {
     Cards = 'cards',
     Lessons = 'lessons',
     GoBack = 'goBack',
+    Trainer = 'trainer',
 }
 
 export interface IFeatureItem 

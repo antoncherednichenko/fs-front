@@ -11,11 +11,12 @@ export const authRouterList: IRouter[] = [
     { 
         path: PagesRoutes.Lessons, 
         component: LessonsSkeleton, 
-        routeId: 'lesson' 
+        routeId: 'lesson',
     },
     { 
         path: PagesRoutes.CurrentLesson, 
         component: LessonsSkeleton,
-        routeId: 'id'
+        routeId: 'id',
+        page: 'currentLesson'
     },
 ]
