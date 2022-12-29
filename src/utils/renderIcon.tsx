@@ -4,6 +4,7 @@ import {
     IoMdCube, 
     IoIosJournal ,
     IoMdArrowBack,
+    IoIosSettings
 } from 'react-icons/io'
 import { IconsNames } from "__data__";
 
@@ -20,6 +21,8 @@ export const renderIcon = (name: string, size?: number) => {
             return <IoIosJournal size={currentSize} />
         case IconsNames.ArrowLeft:
             return <IoMdArrowBack size={currentSize} />
+        case IconsNames.Settings:
+            return <IoIosSettings size={currentSize} />
         default:
             return <></>
     }   

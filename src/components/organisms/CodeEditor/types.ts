@@ -4,6 +4,8 @@ export interface ICodeEditorProps {
     code?: string
     onChange?: (code: string) => void
     height?: string
+    theme?: ECodeEditorThems
+    fontSize?: number
 }
 
 export enum ECodeEditorThems {

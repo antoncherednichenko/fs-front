@@ -4,4 +4,5 @@ export enum IconsNames {
     Sandbox = 'sandbox',
     Book = 'book',
     ArrowLeft = 'arrowLeft',
+    Settings = 'settings',
 }

@@ -1,0 +1,1 @@
+export { TrainerContent } from './TrainerContent'

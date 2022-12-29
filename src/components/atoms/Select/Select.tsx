@@ -11,7 +11,7 @@ const Select: FC<ISelectProps> = ({ values, onChange, placeholder, value }) => {
             sx={select(theme)}
             value={value}
             placeholder={placeholder}
-            onChange={(e) => onChange(e.target.value as string)}
+            onChange={(e: any) => onChange(e.target.value as string)}
         >
             {values.map(value => (
                 <MenuItem 
@@ -19,7 +19,7 @@ const Select: FC<ISelectProps> = ({ values, onChange, placeholder, value }) => {
                     key={value} 
                     value={value}
                 >
-                    <Typography variant="body2">{value}</Typography>
+                    <Typography sx={{padding: 0}} variant="body2">{value}</Typography>
                 </MenuItem>
             ))}
         </MuiSelect>

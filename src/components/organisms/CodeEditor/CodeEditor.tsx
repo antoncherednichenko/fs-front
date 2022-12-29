@@ -16,7 +16,6 @@ import "ace-builds/src-noconflict/theme-textmate";
 import "ace-builds/src-noconflict/theme-solarized_dark";
 import "ace-builds/src-noconflict/theme-solarized_light";
 import "ace-builds/src-noconflict/theme-terminal";
-import { CodeEditorTools } from 'components/molecules';
 
 
 const CodeEditor: FC<ICodeEditorProps> = ({
@@ -25,22 +24,14 @@ const CodeEditor: FC<ICodeEditorProps> = ({
     code = '',
     onChange,
     height = '500px',
+    theme = ECodeEditorThems.Twilight,
+    fontSize = 16
 }) => {
-    const [theme, setTheme] = useState<ECodeEditorThems>(ECodeEditorThems.Twilight)
     const changeHandler = (code: string) => {
         if(onChange) { onChange(code) }
     }
-    const themeChangeHandler = (newTheme: ECodeEditorThems) => {
-        setTheme(newTheme)
-    }
     return (
         <div>
-            {tools && (
-                <CodeEditorTools
-                    themeValue={theme}
-                    onThemeChange={themeChangeHandler} 
-                />
-            )}
             <AceEditor
                 name="code_editor"
                 mode="javascript"
@@ -48,7 +39,7 @@ const CodeEditor: FC<ICodeEditorProps> = ({
                 width="100%"
                 setOptions={{enableBasicAutocompletion: true}}
                 height={height}
-                fontSize={16}
+                fontSize={fontSize}
                 wrapEnabled
                 enableBasicAutocompletion
                 enableLiveAutocompletion
